@@ -6,7 +6,7 @@ agent:
   enabled: true
   mode: approval_queue   # draft_only | approval_queue | auto_post
   venture: ""            # e.g. barta_prime | rony_cn | deals_hub (set on first build)
-  platforms: []          # e.g. [facebook, instagram, threads]
+  platforms: [youtube, instagram, facebook, whatsapp, google_sheet]
   language: bn_en        # bn | en | bn_en
 
 schedule:
@@ -39,7 +39,7 @@ replies:
 leads:
   enabled: false
   intent_keywords: [price, buy, order, cost, interested, how to get, dm]
-  destination: ""         # sheet / notion CRM, set on first build
+  destination: google_sheet  # lead capture destination
   follow_up_draft_only: true  # never auto-DM a pitch
 
 growth:

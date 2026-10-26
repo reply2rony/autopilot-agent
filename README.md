@@ -15,3 +15,10 @@ A persistent agent, not a one-off script.
   it can to a Page).
 - State: run logs and the lead sheet live in this folder, so the agent
   remembers what it already posted, replied to, and captured.
+
+## Platforms covered
+- YouTube
+- Instagram
+- Facebook
+- WhatsApp (1:1 follow-up only, never bulk marketing — bulk promo risks a ban)
+- Google Sheet (lead capture destination)
