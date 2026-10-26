@@ -1,0 +1,68 @@
+# Autopilot Agent — settings file. Change any value here (or tell Vesper in chat)
+# and the next run picks it up. No rebuild needed. Workspace files survive VM reboots.
+agent:
+  name: autopilot-agent
+  version: 1
+  enabled: true
+  mode: approval_queue   # draft_only | approval_queue | auto_post
+  venture: ""            # e.g. barta_prime | rony_cn | deals_hub (set on first build)
+  platforms: []          # e.g. [facebook, instagram, threads]
+  language: bn_en        # bn | en | bn_en
+
+schedule:
+  niche_scan: weekly
+  topic_research: daily
+  drafts_per_day: 2
+  post_times: ["10:00", "18:00"]  # Asia/Dhaka
+
+quality_check:
+  min_total_score: 70     # 0-100, below this a draft goes back for rewrite, never posts
+  hook_strength_min: 7    # /10
+  originality_max_similarity: 0.65  # above this = too close to a competitor post
+  voice_match_min: 7      # /10
+  accuracy: strict        # no invented stats, no risky promises
+  platform_rules: strict  # length, links, hashtags, spam signals
+  offer_fit_required: true
+
+content:
+  voice_notes: ""         # short voice guide, filled from the venture's approved samples
+  banned_words: []
+  hashtags_max: 10
+  links_in_post: false    # Facebook reach rule: links go in comments, not post text
+
+replies:
+  enabled: false
+  auto_reply_safe_only: true
+  escalate_keywords: [refund, scam, legal, police, complaint, threat]
+  escalate_to: user
+
+leads:
+  enabled: false
+  intent_keywords: [price, buy, order, cost, interested, how to get, dm]
+  destination: ""         # sheet / notion CRM, set on first build
+  follow_up_draft_only: true  # never auto-DM a pitch
+
+growth:
+  youtube_targets:
+    long_form_ctr: "4-10%"
+    long_form_retention: "40-60%"
+    shorts_viewed_vs_swiped_min: 80
+  facebook_rules:
+    max_posts_per_day_profile: 2
+    no_links_in_post_text: true
+    no_hashtags_profile: true
+    profile_approval_required: true
+  algorithm_extraction:
+    review_day: Sunday
+    review_time: "21:00"
+    timezone: Asia/Dhaka
+  search_console:
+    setup_status: playbook_ready_not_yet_run
+    sites:
+      - amazondealshub4u.blogspot.com
+      - ursmov13.blogspot.com
+      - reply2rony.blogspot.com
+      - gramaus.blogspot.com
+      - banglahub96.blogspot.com
+      - tinytalestv4kids.blogspot.com
+    sitemap: sitemap.xml
